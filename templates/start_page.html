@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block start_page %}
+<div class="start-content">
+    <h id="start-label">Готовы отправиться в полное опасностей приключение?</h>
+    <br>
+    <a class="btn btn-primary" id="starter" href="{{ url_for('game_page') }}">Принять испытание</a>
+</div>
+{% endblock %}

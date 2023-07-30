@@ -1,0 +1,68 @@
+.center-div
+{
+     margin: 0 auto;
+     width: 100px;
+}
+
+.start-content
+{
+    width: 500px;
+    height: 100px;
+    background-color: grey;
+
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+    justify-content: center;
+
+}
+
+#starter
+{
+    background-color: green;
+    border: 0.05em solid black;
+    width: 50%;
+    display: table;
+    margin: 0 auto;
+}
+
+#start-label
+{
+    display: table;
+    margin: 0 auto;
+    color: black
+}
+
+.intro-container
+{
+    background-color: #cccce6;
+    height: 50px;
+}
+
+#sub-button
+{
+  display: table;
+  margin: 0 auto;
+}
+
+.room-container
+{
+    background-color: #8bdb8b;
+    height: 30px;
+    margin: 0 auto;
+    text-align: center
+}
+
+#error-container
+{
+    background-color: #dd6363;
+}
+
+#win-container
+{
+    background-color: yellow;
+}

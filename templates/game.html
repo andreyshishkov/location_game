@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block game %}
+
+{% if is_state_of_page == true %}
+<div class="intro-container">
+    Вчерашний поход к барону явно удался. Сейчас вы находитесь в пыльной непонятной комнате и Ваше самочувствие после бурной ночи оставляет желать лучшего. Глоток свежего воздуха - вот лучшее решение. Пора пробираться к балкону.
+</div>
+<br>
+{% endif %}
+
+{% if error == true %}
+<div class="room-container" id="error-container">
+    Вы не можете совершить такой ход. Попробуйте использовать что-то другое
+</div>
+<br>
+{% endif %}
+
+<div class="room-container">Вы находитесь в комнате "{{ game.get_room() }}"</div>
+
+{% if game.is_win == true %}
+<br>
+<div class="room-container" id="win-container">
+    Вы выбрались на чистый воздух. Поздравляем с победой!!! (Чтобы начать игру заново - нажмите на кнопку "Начать заново")
+</div>
+<br>
+<div class="center-div">
+        <a class="btn btn-primary" href="{{ url_for('start_page') }}">Начать заново</a>
+</div>
+{% endif %}
+
+<br>
+<br>
+<form action="" method="post">
+    {{ form.csrf_token() }}
+    {% for field in form if field.name not in ["csrf_token", "submit"] %}
+        <p>{{ field.label }}</p>
+
+        <p>
+            {{ field }}
+            {% for error in field.errors %}
+                {{ error }}
+            {% endfor %}
+        </p>
+    {% endfor %}
+
+    <h id="sub-button">{{ form.submit }}</h>
+</form>
+{% endblock %}

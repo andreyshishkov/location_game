@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Location Game</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha512-Dop/vW3iOtayerlYAqCgkVr2aTr2ErwwTYOvRFUpzl2VhCMJyjQF0Q9TjUXIo6JhuM/3i0vVEt2e/7QQmnHQqw==" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="center-div">
+        <a class="btn btn-primary" href="{{ url_for('start_page') }}">На главную!</a>
+    </div>
+    <br>
+    <br>
+    {% block start_page %}
+    {% endblock %}
+
+    {% block game %}
+    {% endblock %}
+
+    {% block scripts %}
+        <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" type="text/css"/>
+    {% endblock %}
+</body>
+</html>
